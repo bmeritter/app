@@ -15,6 +15,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      routes: <String, WidgetBuilder>{
+          "home": (BuildContext context) => new HomePage(),
+        },
       home: MyHomePage(),
     );
   }
@@ -47,7 +50,7 @@ class MyHomePageState extends State<MyHomePage> {
             }),
           },
           type: BottomNavigationBarType.fixed,
-          currentIndex: 0,
+          currentIndex: currentIndex,
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("首页")),
             BottomNavigationBarItem(

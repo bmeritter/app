@@ -55,7 +55,7 @@ class MyHomePageState extends State<MyHomePage> {
             BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("首页")),
             BottomNavigationBarItem(
                 icon: Icon(Icons.category), title: Text("分类")),BottomNavigationBarItem(
-                icon: Icon(Icons.devices_other), title: Text("发现")),
+                icon: Icon(Icons.find_in_page), title: Text("发现")),
             BottomNavigationBarItem(
                 icon: Icon(Icons.shopping_cart), title: Text("购物车")),
             BottomNavigationBarItem(

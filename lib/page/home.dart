@@ -35,7 +35,8 @@ class HomePage extends StatelessWidget {
         ),
         Container(
           height: 650.0,
-          child: CustomScrollView(
+          child: 
+          CustomScrollView(
             slivers: <Widget>[
               SliverToBoxAdapter(
                 child: Container(
@@ -56,7 +57,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               SliverPadding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(4.0),
                 sliver: new SliverGrid(
                   gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
@@ -66,10 +67,12 @@ class HomePage extends StatelessWidget {
                   ),
                   delegate: new SliverChildBuilderDelegate(
                     (BuildContext context, int index) {
-                      return new Column(
-                        children: <Widget>[
-                          Text(icons[index])
-                        ],
+                      return Container(
+                        child: new Column(
+                          children: <Widget>[
+                            Text(icons[index]),
+                          ],
+                        ),
                       );
                     },
                     childCount: icons.length,
@@ -80,7 +83,7 @@ class HomePage extends StatelessWidget {
                 itemExtent: 50,
                 delegate: SliverChildBuilderDelegate(
                   (BuildContext context, int index) {
-                    return new Container(child: Text('ddd'));
+                    return new Container(child: Text('ddd $index'));
                   },
                   childCount: 30,
                 ),

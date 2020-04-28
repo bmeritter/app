@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
         ),
         Container(
           padding: EdgeInsets.fromLTRB(0, 0, 0, 8),
-          height: 200.0,
+          height: 150.0,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemExtent: 300,
@@ -38,7 +38,49 @@ class HomePage extends StatelessWidget {
               ));
             },
           ),
+        ),
+        Container(
+          height: 300.0,
+          child: GridView(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3, //横轴三个子widget
+                childAspectRatio: 2.0 //宽高比为1时，子widget
+                ),
+            children: <Widget>[
+              Column(
+                children: <Widget>[Icon(Icons.ac_unit), Text('unit')],
+              ),
+              Column(
+                children: <Widget>[
+                  Icon(Icons.airport_shuttle),
+                  Text('airport')
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  Icon(Icons.all_inclusive),
+                  Text('inclusive')
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  Icon(Icons.beach_access),
+                  Text('beach access')
+                ],
+              ),
+              Column(
+                children: <Widget>[Icon(Icons.cake), Text('cake')],
+              ),
+              Column(
+                children: <Widget>[
+                  Icon(Icons.free_breakfast),
+                  Text('free breakfast')
+                ],
+              ),
+            ],
+          ),
         )
+      
       ],
     );
   }

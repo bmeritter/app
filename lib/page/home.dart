@@ -82,13 +82,29 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              SliverFixedExtentList(
-                itemExtent: 50,
-                delegate: SliverChildBuilderDelegate(
-                  (BuildContext context, int index) {
-                    return new Container(child: Text('ddd $index'));
-                  },
-                  childCount: 30,
+              SliverPadding(
+                padding: const EdgeInsets.fromLTRB(8, 4, 8, 4),
+                sliver: new SliverGrid(
+                  gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 10.0,
+                    crossAxisSpacing: 20.0,
+                    childAspectRatio: 2.0,
+                  ),
+                  delegate: new SliverChildBuilderDelegate(
+                        (BuildContext context, int index) {
+                      return Container(
+                        color: Colors.lightBlue,
+                        child: new Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text('product'),
+                          ],
+                        ),
+                      );
+                    },
+                    childCount: 20,
+                  ),
                 ),
               ),
             ],

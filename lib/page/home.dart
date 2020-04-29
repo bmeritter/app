@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class HomePage extends StatelessWidget {
   List<String> images = [
     'https://t9.baidu.com/it/u=1307125826,3433407105&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1588668774&t=710339aa6b51cb83112b7deb556c2122',
@@ -35,8 +36,7 @@ class HomePage extends StatelessWidget {
         ),
         Container(
           height: 650.0,
-          child: 
-          CustomScrollView(
+          child: CustomScrollView(
             slivers: <Widget>[
               SliverToBoxAdapter(
                 child: Container(
@@ -62,15 +62,18 @@ class HomePage extends StatelessWidget {
                   gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
                     mainAxisSpacing: 10.0,
-                    crossAxisSpacing: 10.0,
-                    childAspectRatio: 4.0,
+                    crossAxisSpacing: 20.0,
+                    childAspectRatio: 2.0,
                   ),
                   delegate: new SliverChildBuilderDelegate(
                     (BuildContext context, int index) {
+                      var icon = icons[index];
                       return Container(
                         child: new Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            Text(icons[index]),
+                            Icon(Icons.access_alarm),
+                            Text(icon),
                           ],
                         ),
                       );

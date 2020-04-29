@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutterapp/page/category.dart';
 import 'package:flutterapp/page/discovery.dart';
 import 'package:flutterapp/page/home.dart';
 import 'package:flutterapp/page/profile.dart';
 import 'package:flutterapp/page/shopping-cart.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  debugPaintSizeEnabled = true;
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
